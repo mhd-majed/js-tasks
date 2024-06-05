@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        function ageVerf() {
+
+            const x = parseInt(prompt("Enter your age:"));
+            let res;
+            if (x <18) {
+                res = "you are under age"
+            }
+            else{
+                res = "you can watch the movie"
+            }
+            document.getElementById('res').innerText = `Result: ${res}`;
+            console.log(`Result: ${res}`);
+            window.alert(res);
+        }
+        ageVerf();
+    </script>
+</body>
+
+</html>

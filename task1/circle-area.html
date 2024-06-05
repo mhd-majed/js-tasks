@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="r">Enter the circle raduis:</label>
+        <input type="number" id="r">
+        <button type="button" onclick="area()">submit</button>
+    </form>
+    <label for="" id="res">result:</label>
+    <script>
+        function area() {
+            const r = parseInt(document.getElementById('r').value);
+            const pi = 22/7;
+            let res;
+            
+            res = pi *r*r
+            document.getElementById('res').innerText = `Result: ${res}`;
+            console.log(`Result: ${res}`);
+        }
+    </script>
+</body>
+
+</html>

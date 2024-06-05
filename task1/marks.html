@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="mark">Enter a mark:</label>
+        <input type="number" id="mark">
+        <button type="button" onclick="marking()">submit</button>
+    </form>
+    <label for="" id="res">result:</label>
+    <script>
+        function marking() {
+
+            const mark = parseInt(document.getElementById('mark').value);
+            let res;
+                if (mark>=90) {
+                    res="A+"
+                } 
+                else if (mark >= 80 && mark < 90) {
+                    res = "A";
+                }
+                else if (mark >= 70 && mark < 80) {
+                    res = "B";
+                }
+                else if (mark >= 60 && mark < 70) {
+                    res = "C";
+                }
+                else if (mark >= 50 && mark < 60) {
+                    res = "D";
+                }
+                 else if (mark < 50) {
+                    res = "F";
+                }
+                document.getElementById('res').innerText = `Result: ${res}`;
+                console.log(`Result: ${res}`);
+        }
+    </script>
+</body>
+
+</html>

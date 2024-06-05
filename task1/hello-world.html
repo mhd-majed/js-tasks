@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <button type="button" onclick="xBigger()">submit</button>
+    </form>
+    <label for="" id="res">result:</label>
+    <script>
+        function xBigger() {
+
+            const x = parseInt(prompt("Enter a x:"));
+            const y = parseInt(prompt("Enter a y:"));
+            let res;
+            if (x>y) {
+                res = "Hello world"
+            }
+            else{
+                res = "Goodbye"
+            }
+            document.getElementById('res').innerText = `Result: ${res}`;
+            console.log(`Result: ${res}`);
+            window.alert(res);
+        }
+    </script>
+</body>
+
+</html>

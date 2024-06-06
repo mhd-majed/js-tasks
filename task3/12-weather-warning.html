@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        function weather() {
+
+            const x = parseInt(prompt("Enter the temp:"));
+            let res;
+            if (x > 25) {
+                res = "hot"
+            }
+            else if (x >= 16 && x <= 25) {
+                res = "warm";
+            }
+            else if (x >= 0 && x <= 15) {
+                res = "cold";
+            }
+            else if (x < 0) {
+                res = "very cold";
+            }
+            document.getElementById('res').innerText = `Result: ${res}`;
+            console.log(`Result: ${res}`);
+            window.alert(res);
+        }
+        weather()
+    </script>
+</body>
+
+</html>

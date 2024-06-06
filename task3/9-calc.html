@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <button type="button" onclick="calculate()">Calculate</button>
+    <label id="res">Result:</label>
+
+    <script>
+        function calculate() {
+            const allowedChars = '+-*/';
+
+            const num1 = parseFloat(prompt("Enter the first number:"));
+            if (isNaN(num1)) 
+            {
+                alert("Invalid input. Please enter a valid number.");
+                return;
+            }
+            const num2 = parseFloat(prompt("Enter the second number:"));
+            if (isNaN(num2)) 
+            {
+                alert("Invalid input. Please enter a valid number.");
+                return;
+            }
+            const operator = prompt("Enter an operator (+, -, *, /):");
+            if (!allowedChars.includes(operator) || operator.length !== 1) 
+            {
+                alert("Invalid input. Please enter a valid operator.");
+                return;
+            }
+            let res;
+            if (operator === "+") 
+            {
+                res = num1 + num2;
+            }
+             else if (operator === "-") 
+             {
+                res = num1 - num2;
+            }
+             else if (operator === "*") 
+             {
+                res = num1 * num2;
+            }
+             else if (operator === "/") 
+            {
+                if( num2==0){
+                    alert("Not divsible by zero");
+                    return;
+
+                }
+                res = num1 / num2;
+            }
+
+            document.getElementById('res').innerText = `Result: ${res}`;
+            console.log(`Result: ${res}`);
+            window.alert(`Result: ${res}`);
+        }
+    </script>
+</body>
+
+</html>

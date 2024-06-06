@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        function login() {
+            const users = [
+                { username: "majed", password: "abc123" },
+                { username: "ahmed", password: "123456789" },
+                { username: "loay", password: "abcdefg" }
+            ];
+            const name = prompt("Enter your username:");
+            const password = prompt("Enter your password:");
+            let res = "incorrect password"
+            for (let i = 0; i <users.length; i++) {
+                if (users[i].password == password && users[i].username == name) {
+                res = "login successful"
+            }}
+            document.getElementById('res').innerText = `Result: ${res}`;
+            console.log(`Result: ${res}`);
+            window.alert(`Result: ${res}`);
+        }
+        login();
+    </script>
+</body>
+
+</html>

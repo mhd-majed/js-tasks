@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        function grading() {
+            let mark = parseInt(prompt("Enter your grade:"));      
+            const bonus = confirm("Did you complete any bonus assignments?") ? 5 : 0;
+            mark= mark+bonus;
+            let res;
+            if (mark >= 90 && mark < 100) {
+                res = "A";
+            }
+            else if (mark >= 80 && mark < 90) {
+                res = "B";
+            }
+            else if (mark >= 70 && mark < 80) {
+                res = "C";
+            }
+            else if (mark >= 60 && mark < 70) {
+                res = "D";
+            }
+            else if (mark < 60) {
+                res = "F";
+            }
+            else {
+                res = "out of range ";
+            }
+            document.getElementById('res').innerText = `Result: ${res}`;
+            console.log(`Result: ${res}`);
+            window.alert(`Result: ${res}`);
+        }
+        grading()
+    </script>
+</body>
+
+</html>

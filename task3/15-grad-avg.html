@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <label id="res">Result:</label>
+    <script>
+        function grading() {
+            let totalMarks = 0;
+            for (let i = 1; i <= 3; i++) {
+                const mark = parseInt(prompt(`Enter your grade for subject ${i}:`));
+                totalMarks += mark;
+            }
+            const avg = totalMarks / 3;
+            let res;
+            if (avg > 60) {
+                res = "pass avg = " +avg;
+            } else {
+                res = "fail avg = " + avg;
+            }
+            document.getElementById('res').innerText = `Result: ${res}`;
+            console.log(`Result: ${res}`);
+            window.alert(`Result: ${res}`);
+        }
+        grading();
+    </script>
+</body>
+
+</html>

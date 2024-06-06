@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        function dayOfTheWeek() {
+            const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
+            const userInput = parseInt(prompt("Enter a number from 1 to 7 :"));
+            let res;
+
+            if (userInput >= 1 && userInput <= 7) {
+                res = daysOfWeek[userInput - 1]; 
+            } else {
+                res = "Invalid input";
+            }
+            document.getElementById('res').innerText = `the corresponding day of the week is: ${res}`;
+            alert(`The corresponding day of the week is: ${res}`);
+            console.log(`The corresponding day of the week is: ${res}`);
+        }
+
+        dayOfTheWeek();
+    </script>
+</body>
+
+</html>

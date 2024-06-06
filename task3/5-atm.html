@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        function withdraw() {
+            let balance = parseFloat(prompt("Enter your balance:"));
+            let withdraw = parseFloat(prompt("Enter your withdraw amount:"));
+            let res;
+
+            if (withdraw<= balance && withdraw>0) {
+                balance = balance - withdraw;
+                res = "new balance = "+ balance;
+            }
+            else {
+                res = "error"
+            }
+            document.getElementById('res').innerText = `Result: ${res}`;
+            console.log(`Result: ${res}`);
+            window.alert(`Result: ${res}`);
+        }
+        withdraw()
+    </script>
+</body>
+
+</html>

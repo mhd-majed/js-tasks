@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        function tri() {
+            let sumAngle = 0;
+            for (let i = 0; i < 3; i++) {
+                sumAngle += parseInt(prompt(`Enter the ${i + 1} angle`)); 
+            }
+            let res = "invalid input";
+            if (sumAngle !== 180) 
+            { 
+                res = "not a valid";
+            }
+             else if(sumAngle==180)
+            { 
+                res = "valid";
+            }
+            document.getElementById('res').innerText = `The triangle is ${res}`;
+            alert(`The triangle is ${res}`);
+            console.log(`The triangle is ${res}`);
+        }
+
+        tri();
+    </script>
+</body>
+
+</html>

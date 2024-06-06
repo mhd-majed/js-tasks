@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        function dayOfTheWeek() {
+            const daysOfWeek = {
+                "sunday": 1,
+                "monday": 2,
+                "tuesday": 3,
+                "wednesday": 4,
+                "thursday": 5,
+                "friday": 6,
+                "saturday": 7
+            };
+            const dayName = prompt("Enter a day's name:");
+            let res = "invalid input";
+            if(daysOfWeek[dayName] != undefined)
+            res = daysOfWeek[dayName];
+
+            document.getElementById('res').innerText = `the corresponding day of the week is: ${res}`;
+            alert(`The corresponding day of the week is: ${res}`);
+            console.log(`The corresponding day of the week is: ${res}`);
+        }
+
+        dayOfTheWeek();
+    </script>
+</body>
+
+</html>

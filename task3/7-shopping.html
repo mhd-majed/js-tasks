@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        function discount() {
+
+            let x = parseInt(prompt("Enter total amount of their shopping cart :"));
+            let res;
+            if (x >= 300) {
+                x = x - x / 3;
+                res = "final amount after discount = " + x;
+            }
+            else if (x >= 200) {
+                x = x - x / 5;
+                res = "final amount after discount = " + x;
+            }
+            else if (x >= 100) {
+                x = x - x / 10;
+                res = "final amount after discount = " + x;
+            }
+            document.getElementById('res').innerText = `Result: ${res}`;
+            console.log(`Result: ${res}`);
+            window.alert(res);
+        }
+        discount()
+    </script>
+</body>
+
+</html>

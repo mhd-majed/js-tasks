@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        function ageNationalityChecker() {
+
+            let movieType = prompt("enter the movie type :").toLowerCase();
+            let age = parseInt(prompt(" eneter your age:"));
+            let cost;
+            if (movieType == "3d") {
+                if (age <= 12) {
+                    cost = "$10"
+                }
+                else {
+                    cost = "$50"
+                }
+
+            }
+            else if (movieType == "regular"){
+                if (age <= 12) {
+                    cost = "$5"
+                }
+                else {
+                    cost = "$25"
+                }
+            }
+            else {
+                cost = "invaild input"
+            }
+            document.getElementById('res').innerText = `Result: ${cost}`;
+            console.log(`Result: ${cost}`);
+            window.alert(cost);
+        }
+
+        ageNationalityChecker()
+    </script>
+</body>
+
+</html>

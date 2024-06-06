@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        function weather() {
+
+            const x = parseInt(prompt("Enter the temp:"));            
+            let res;
+            const fahrenheit = (x * 9 / 5) + 32;
+            if (x >= 100) {
+                res = "above boiling \n fahrenheit = " + fahrenheit
+            }
+            else if (x >0 && x < 100) {
+                res = "normal \n fahrenheit = " + fahrenheit
+            }
+            else if (x <0) {
+                res = "below freezing \n fahrenheit = " + fahrenheit
+            }
+            document.getElementById('res').innerText = `Result: ${res}`;
+            console.log(`Result: ${res}`);
+            window.alert(res);
+        }
+        weather()
+    </script>
+</body>
+
+</html>

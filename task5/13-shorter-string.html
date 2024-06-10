@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+    const s1 = prompt("Enter a string");
+    const s2 = prompt("Enter a string");
+    const s3 = prompt("Enter a string");
+    const s4 = prompt("Enter a string");
+    const s5 = prompt("Enter a string");
+
+    function shortestString(s1, s2, s3, s4, s5) {
+        let shortest = s1;
+
+        if (s2.length < shortest.length) {
+            shortest = s2;
+        }
+        if (s3.length < shortest.length) {
+            shortest = s3;
+        }
+        if (s4.length < shortest.length) {
+            shortest = s4;
+        }
+        if (s5.length < shortest.length) {
+            shortest = s5;
+        }
+        return shortest;
+    }
+        alert(shortestString(s1, s2, s3, s4, s5));
+    </script>
+</body>
+
+</html>

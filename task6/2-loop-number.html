@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <label for="" id="label"></label>
+    <script>
+        let num = 1;
+        for (let j = 1; j < 5; j++) {
+            for (let i = 1; i <= j; i++) {
+                document.getElementById("label").innerHTML += `${num} `;
+                num++;
+            }
+            document.getElementById("label").innerHTML += `<br>`;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        let mark1 = parseInt(prompt("Enter your grade:"));
+        function scoreInUniversty(mark) {
+            
+            if (mark >= 95 && mark <= 100) {
+                res = "A";
+            }
+            else if (mark >= 85 && mark < 95) {
+                res = "B";
+            }
+            else if (mark >= 70 && mark < 85) {
+                res = "C";
+            }
+            else if (mark >= 50 && mark < 70) {
+                res = "D";
+            }
+            else if (mark < 50) {
+                res = "F";
+            }
+            else {
+                res = "out of range ";
+            }
+            return res;
+        }
+        alert( scoreInUniversty(mark1))
+    </script>
+</body>
+
+</html>

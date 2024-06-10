@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <label for="" id="label"></label>
+    <script>
+        let s = prompt('enter a number');
+        function pandigital(){
+            let bool = true
+        for (let j = 0; j < 10; j++) {
+            let index = s.indexOf(`${j}`);
+            if(index<0){
+                bool =  false
+            }
+
+            }
+            return bool;
+        }
+        alert(pandigital());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <label for="" id="label"></label>
+    <script>
+    const userDrink = prompt("Enter your favorite drink:").toLowerCase();
+    function getDrinkPrice(drink) {
+        
+        let price;
+
+        switch (drink) {
+            case 'coffee':
+                price = "$3";
+                break;
+            case 'tea':
+                price = "$2";
+                break;
+            case 'juice':
+                price = "$4";
+                break;
+            case 'soda':
+                price = "$1";
+                break;
+            case 'water':
+                price = "$1";
+                break;
+            default:
+                price = "invalid input";
+        }
+        return price;
+    }
+    alert(getDrinkPrice(userDrink))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        const num1 = prompt("enter a number");
+        const num2 = prompt("enter a number");
+        const num3 = prompt("enter a number");
+        function smallerNubmer(n1,n2,n3) {
+
+            if (num1 < num2 && num1<num3) {
+                return num1;
+            }
+            else if(num2 < num1 && num2 < num3){
+                return num2;
+            }
+            else{
+                return num2;
+            }
+
+
+        }
+
+        alert(smallerNubmer(num1,num2,num3));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        const n1 = parseInt( prompt('enter a number'));
+        const n2 = parseInt(prompt('enter a number'));
+
+        function randomBetweenNumbers(num1,num2) {
+            return Math.floor(Math.random() * (num2 - num1 + 1)) + num1;
+        }
+        alert(randomBetweenNumbers(n1,n2));
+    </script>
+</body>
+
+</html>

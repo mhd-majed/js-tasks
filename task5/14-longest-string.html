@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <label for="" id="res">result:</label>
+    <script>
+        const s1 = prompt("Enter a string");
+        const s2 = prompt("Enter a string");
+        const s3 = prompt("Enter a string");
+        const s4 = prompt("Enter a string");
+
+        function longerString(s1, s2, s3, s4) {
+            let longest = s1;
+
+            if (s2.length > longest.length) {
+                longest = s2;
+            }
+            if (s3.length > longest.length) {
+                longest = s3;
+            }
+            if (s4.length > longest.length) {
+                longest = s4;
+            }
+            return longest;
+        }
+        alert(longerString(s1, s2, s3, s4));
+    </script>
+</body>
+
+</html>

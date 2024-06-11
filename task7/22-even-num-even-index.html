@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var nums = [5, 2, 2, 1, 8, 66, 55, 77, 34, 9, 55, 1]
+        function evenNumberEvenIndex(arr) {
+            let array = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i]% 2 == 0 && i % 2 == 0) {
+                    array.push(arr[i]);
+                }
+            }
+            return array;
+        }
+        function evenNumberEvenIndex1(arr) {
+            let array = [];
+            let i = 0;
+            while (i < arr.length) {
+                if (arr[i] % 2 == 0 && i % 2 == 0) {
+                    array.push(arr[i]);
+                }
+                i++
+            }
+            return array;
+        }
+
+
+        console.log(evenNumberEvenIndex1(nums));
+        console.log(evenNumberEvenIndex(nums));
+
+
+    </script>
+</body>
+
+</html>

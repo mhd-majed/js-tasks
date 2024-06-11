@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function addKeyAndValue(arr,key,value) {
+            let array = [];
+            arr.forEach(function (item) {
+                item.key = value
+                array.push(item)
+            })
+            return array;
+        }
+        console.log(addKeyAndValue([{ name: 'Elie' }, { name: 'Tim' }, { name: 'Matt' }, { name: 'Colt' }], 'title', 'instructor'));
+    </script>
+</body>
+
+</html>

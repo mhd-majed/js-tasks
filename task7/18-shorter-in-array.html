@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+    var strings = ["alex", "mercer", "madrasa", "rashed2", "emad", "hala"]
+        function shorterInArray(arr) {
+            let shortest = arr[0];
+            for (let i = 1; i < arr.length; i++) {
+                if(shortest.length>arr[i].length){
+                    shortest = arr[i];
+                }
+            }
+            return shortest;
+        }
+        function shorterInArray1(arr) {
+            let shortest = arr[0];
+            let i = 1;
+            while (i < arr.length) {
+                if (shortest.length > arr[i].length) {
+                    shortest = arr[i];
+                }
+                i++;
+            }
+            return shortest;
+        }
+        console.log(shorterInArray(strings));
+        console.log(shorterInArray1(strings));
+
+
+    </script>
+</body>
+
+</html>

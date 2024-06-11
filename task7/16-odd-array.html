@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var nums = [1, 2, 3, 8, 9];
+        function removeFromArray(arr) {
+            let array=[];
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] % 2!=0) {
+                    array.push(arr[i])
+                }
+            }
+            return array;
+        }
+        function removeFromArray1(arr) {
+            let array=[];
+            let i = 0;
+            while (i < arr.length) {
+                if (arr[i] % 2 != 0) {
+                    array.push(arr[i])
+                }
+                i++;
+            }
+            return array;
+        }
+        console.log(removeFromArray(nums));
+        console.log(removeFromArray1(nums));
+
+
+    </script>
+</body>
+
+</html>

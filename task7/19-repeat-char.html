@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var string ="alex mercer madrasa rashed2 emad hala";
+        function repeatChar(str,char) {
+            let count = 0;
+            for (let i = 0; i < str.length; i++) {
+                if (char == str[i]) {
+                    count++;
+                }
+            }
+            return count;
+        }
+        function repeatChar1(str, char) {
+            let count = 0;
+            let i = 0;
+            while (i < str.length) {
+                if (char == str[i]) {
+                    count++;
+                }
+                i++;
+            }
+            return count;
+        }
+        console.log(repeatChar(string,"a"));
+        console.log(repeatChar1(string,"z"));
+
+
+    </script>
+</body>
+
+</html>

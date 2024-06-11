@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = [0, 5, 7, 9];
+        var array2 = [5, 9, -7, 3.5]
+        array.shift();
+        array.shift();
+        array.shift();
+        array.push(10);
+        array.unshift(8);
+        array.unshift(6);
+        array.unshift(4);
+        array.unshift(3);
+        array.unshift(1);
+        console.log(array)
+
+
+        //push and unshift returns the array length
+        console.log(array2.push(7));
+
+        console.log(array2.unshift(1));
+
+        //pop and shift return the removed the element
+        console.log(array2.pop());
+
+        console.log(array2.shift());
+    
+
+    </script>
+</body>
+
+</html>

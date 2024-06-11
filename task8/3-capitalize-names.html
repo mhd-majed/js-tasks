@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function capitalizeNames(arr) {
+            let str;
+            str = arr.map(function (item) {
+                return item[0].toUpperCase()+ item.substring(1).toLowerCase()
+            })
+            return str;
+        }
+        console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            width: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <select id="fontSelect" onchange="formatText()">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+        </select>
+        <select id="fontSizeSelect" onchange="formatText()">
+            <option value="12px">12pt</option>
+            <option value="14px">14pt</option>
+        </select>
+        <input type="checkbox" id="boldCheck" onclick="formatText()" /> Bold
+        <input type="checkbox" id="italicCheck" onclick="formatText()" /> Italic
+        <input type="checkbox" id="underlineCheck" onclick="formatText()" /> Underline
+    </div>
+    <textarea id="textInput" oninput="formatText()"></textarea>
+
+    <script>
+        const formatText = () => {
+            const fontSelect = document.getElementById("fontSelect").value;
+            const fontSizeSelect = document.getElementById("fontSizeSelect").value;
+            const boldCheck = document.getElementById("boldCheck").checked;
+            const italicCheck = document.getElementById("italicCheck").checked;
+            const underlineCheck = document.getElementById("underlineCheck").checked;
+            const textInput = document.getElementById("textInput");
+
+            let textStyle = "";
+            if (boldCheck) textStyle += "bold ";
+            if (italicCheck) textStyle += "italic ";
+            if (underlineCheck) textStyle += "underline ";
+
+            textInput.style.fontFamily = fontSelect;
+            textInput.style.fontSize = fontSizeSelect;
+            textInput.style.fontStyle = italicCheck ? "italic" : "normal";
+            textInput.style.fontWeight = boldCheck ? "bold" : "normal";
+            textInput.style.textDecoration = underlineCheck ? "underline" : "none";
+        };
+    </script>
+</body>
+
+</html>

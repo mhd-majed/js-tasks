@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+    width: 100px;
+    height: 100px;
+    background-color: red; 
+    margin: 20px;
+    animation: colorChange 3s infinite; 
+}
+    </style>
+</head>
+<body>
+    <div class="box" id="colorBox"></div> 
+
+
+    <script>
+        const box = document.getElementById('colorBox');
+        const colors = ['red', 'blue', 'green'];
+        let currentIndex = 0; 
+
+        function changeColor() {
+        box.style.backgroundColor = colors[currentIndex]; 
+        currentIndex = (currentIndex + 1) % colors.length; 
+        }
+
+
+setInterval(changeColor, 1000);
+    </script>
+</body>
+</html>

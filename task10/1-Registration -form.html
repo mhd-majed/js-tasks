@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+<form action="#" method="post" id="registration_form">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required><br>
+    <span id="first_name_error" class="error"></span><br>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required><br>
+    <span id="last_name_error" class="error"></span><br>
+
+    <label for="birth_date">Birth Date:</label>
+    <input type="date" id="birth_date" name="birth_date" required><br>
+    <span id="birth_date_error" class="error"></span><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+    <span id="email_error" class="error"></span><br>
+
+    <label for="confirm_email">Confirm Email:</label>
+    <input type="email" id="confirm_email" name="confirm_email" required><br>
+    <span id="confirm_email_error" class="error"></span><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required><br>
+    <span id="phone_error" class="error"></span><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+    <span id="password_error" class="error"></span><br>
+
+    <label for="confirm_password">Confirm Password:</label>
+    <input type="password" id="confirm_password" name="confirm_password" required><br>
+    <span id="confirm_password_error" class="error"></span><br>
+
+    <input type="submit" value="Register">
+</form>
+    <script>
+    function validateName(name) {
+        const regex = /^[a-zA-Z]+$/;
+        return regex.test(name);
+    }
+    document.getElementById("first_name").addEventListener("input", function (event) {
+        const name = event.target.value;
+        const errorElement = document.getElementById("first_name_error");
+        if (validateName(name)) {
+            errorElement.textContent = "";
+        } else {
+            errorElement.textContent = "The name should only contain letters";
+        }
+    });
+    document.getElementById("last_name").addEventListener("input", function (event) {
+            const name = event.target.value;
+            const errorElement = document.getElementById("last_name_error");
+            if (validateName(name)) {
+                errorElement.textContent = "";
+            } else {
+                errorElement.textContent = "The name should only contain letters";
+            }
+        });
+
+
+    function validateEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+    document.getElementById("email").addEventListener("input", function (event) {
+            const email = event.target.value;
+            const errorElement = document.getElementById("email_error");
+            if (validateEmail(email)) {
+                errorElement.textContent = "";
+            } else {
+                errorElement.textContent = "Invalid email address";
+            }
+        });
+    function checkEmailConfirmation() {
+        const email = document.getElementById("email").value;
+        const confirmEmailInput = document.getElementById("confirm_email");
+        const confirmEmail = confirmEmailInput.value;
+        const confirmErrorElement = document.getElementById("confirm_email_error");
+
+        if (confirmEmail === email) {
+            confirmErrorElement.textContent = ""; 
+        } else {
+            confirmErrorElement.textContent = "Emails do not match"; 
+        }
+    }
+    document.getElementById("confirm_email").addEventListener("input", function (event) {
+        checkEmailConfirmation();
+    });
+
+    function validatePassword(password) {
+            const regex = /^(?=.*[A-Z])(?=.*\d.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,32}$/;
+            return regex.test(password);
+        }
+
+        document.getElementById("password").addEventListener("input", function (event) {
+                const password = event.target.value;
+                const errorElement = document.getElementById("password_error");
+                if (validatePassword(password)) {
+                    errorElement.textContent = "";
+                } else {
+                    errorElement.textContent = "Password must contain 1 uppercase letter, 2 numbers, 1 special character, and be 8-32 characters long.";
+                }
+            });
+
+
+
+
+        function checkpasswordConfirmation() {
+            const email = document.getElementById("password").value;
+            const confirmEmailInput = document.getElementById("confirm_password");
+            const confirmEmail = confirmEmailInput.value;
+            const confirmErrorElement = document.getElementById("confirm_password_error");
+
+            if (confirmEmail === email) {
+                confirmErrorElement.textContent = "";
+            } else {
+                confirmErrorElement.textContent = "passwords do not match";
+            }
+        }
+        document.getElementById("confirm_password").addEventListener("input", function (event) {
+            checkpasswordConfirmation();
+        });
+        function validatePhone(name) {
+            const regex = /^[0-9]{10}$/;
+            return regex.test(name);
+        }
+        document.getElementById("phone").addEventListener("input", function (event) {
+            const phone = event.target.value;
+            const errorElement = document.getElementById("phone_error");
+            if (validatePhone(phone)) {
+                errorElement.textContent = "";
+            } else {
+                errorElement.textContent = "numbers only and it should be 10 numbers";
+            }
+        });
+    </script>
+</body>
+</html>

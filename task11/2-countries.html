@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select onchange="changeCountryFlag(this)">
+        <option>Jordan</option>
+        <option>Saudi</option>
+        <option>Syria</option>
+        <option>Egypt</option>
+        <option>Palestine</option>
+    </select><br>
+    <img id="img" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.worldatlas.com%2Fupload%2F92%2Fe2%2Fed%2Fjo-flag.jpg&f=1&nofb=1&ipt=c932ba181788cb67ae536cf7a494b39efbe832a2e0b4dcf3feaa2f75ad44e564&ipo=images" alt="" width="200px">
+    <script>
+        const countries ={
+            jordan: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.worldatlas.com%2Fupload%2F92%2Fe2%2Fed%2Fjo-flag.jpg&f=1&nofb=1&ipt=c932ba181788cb67ae536cf7a494b39efbe832a2e0b4dcf3feaa2f75ad44e564&ipo=images",
+            saudi: "https://wallpapercave.com/wp/wp3534622.jpg",
+            syria: "https://flagpedia.net/data/flags/w1600/sy.png",
+            egypt: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Egypt.svg/1920px-Flag_of_Egypt.svg.png",
+            palestine: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Palestine.svg/800px-Flag_of_Palestine.svg.png"
+        }
+        function changeCountryFlag(select) {
+            const selectedCountry = select.value.toLowerCase();
+            const imgElement = document.getElementById("img");
+                imgElement.src = countries[selectedCountry];
+            }
+    </script>
+</body>
+</html>

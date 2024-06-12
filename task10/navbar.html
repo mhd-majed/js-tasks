@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        a {
+            font-size: 20px;
+            text-decoration: none;
+            color: #14142b;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            display: flex;
+            height: 80px;
+            width: 100%;
+            background: #14142b;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px 0 100px;
+            flex-wrap: wrap;
+        }
+
+        nav .logo {
+            color: #fff;
+            font-size: 35px;
+            font-weight: 600;
+        }
+
+        .logo img {
+            margin-top: 5px;
+            width: 65px
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 5px;
+        }
+
+        nav ul li a {
+            color: #f2f2f2;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a.active,
+        nav ul li a:hover {
+            color: #14142b;
+            background: #fff;
+        }
+
+        nav .menu-btn i {
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            display: none;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        @media (max-width: 920px) {
+            nav .menu-btn i {
+                display: block;
+            }
+
+            #click:checked~.menu-btn i:before {
+                content: "\f00d";
+            }
+
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: #14142b;
+                height: 100vh;
+                width: 100%;
+                text-align: center;
+                display: block;
+                transition: all 0.3s ease;
+            }
+
+            #click:checked~ul {
+                left: 0;
+            }
+
+            nav ul li {
+                width: 100%;
+                margin: 40px 0;
+            }
+
+            nav ul li a {
+                width: 100%;
+                margin-left: -100%;
+                display: block;
+                font-size: 20px;
+                transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+
+            #click:checked~ul li a {
+                margin-left: 0px;
+            }
+
+            nav ul li a.active,
+            nav ul li a:hover {
+                background: none;
+                color: #FFA500;
+            }
+        }
+
+        #slider-container {
+            width: 600px;
+            overflow: hidden;
+            position: relative;
+            margin: auto;
+            margin: 150px auto 0;
+        }
+
+        #slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        #slider img {
+            width: 600px;
+            flex-shrink: 0;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .slider-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        #prev-btn {
+            left: 0;
+        }
+
+        #next-btn {
+            right: 0;
+        }
+
+        nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            background-color: #14142b;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        nav ul li:hover ul.dropdown {
+            display: block;
+        }
+
+        nav ul li ul.dropdown li {
+            float: none;
+            margin: 0;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+            text-align: left;
+        }
+
+        nav ul li ul.dropdown li:last-child {
+            border-bottom: none;
+        }
+
+        nav ul li ul.dropdown li a {
+            color: #f2f2f2;
+            padding: 8px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li ul.dropdown li a:hover {
+            background-color: #f2f2f2;
+            color: #14142b;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images/mm.png" alt="">
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a class="active" href="#about-me">About Me</a></li>
+            <li><a href="#">Projects <i class="fas fa-caret-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#project1">Project 1</a></li>
+                    <li><a href="#project2">Project 2</a></li>
+                    <li><a href="#project3">Project 3</a></li>
+            </ul></li>
+            <li><a href="#services">My Services</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact-me">Contact Me</a></li>
+        </ul>
+    </nav>
+    <div id="slider-container">
+        <div id="slider">
+            <img src="image1.png" alt="Image 1">
+            <img src="image2.png" alt="Image 2">
+            <img src="image3.png" alt="Image 3">
+        </div>
+        <button class="slider-btn" id="prev-btn">Prev</button>
+        <button class="slider-btn" id="next-btn">Next</button>
+    </div>
+</body>
+<script>
+    const slider = document.getElementById('slider');
+    const images = slider.getElementsByTagName('img');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        const offset = -index * 600;
+        slider.style.transform = `translateX(${offset}px)`;
+    }
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    function showPrevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+
+    document.getElementById('prev-btn').addEventListener('click', showPrevImage);
+    document.getElementById('next-btn').addEventListener('click', showNextImage);
+
+    setInterval(showNextImage, 6000);
+</script>
+
+</html>

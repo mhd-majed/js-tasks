@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            border: 2px black solid ;
+            width: 200px;
+            padding: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p id="per" onmouseover="backGroundColor()"><br><br>
+        hello world
+        <br><br><br></p>
+
+    <script>
+         function backGroundColor() {
+                var pElement = document.getElementById("per");
+                pElement.style.backgroundColor = "yellow";
+                pElement.style.fontWeight = "bold";
+            }
+    </script>
+</body>
+</html>

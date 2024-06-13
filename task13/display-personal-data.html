@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Data Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .card h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+        }
+
+        .languages-list {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>Personal Data</h2>
+        <p><strong>Name:</strong> <span id="name"></span></p>
+        <p><strong>Age:</strong> <span id="age"></span></p>
+        <p><strong>Gender:</strong> <span id="gender"></span></p>
+        <p><strong>Brief Description:</strong></p>
+        <p id="description"></p>
+        <p><strong>Major and University:</strong> <span id="major"></span></p>
+        <p><strong>Preferred Programming Languages:</strong></p>
+        <ul id="languages" class="languages-list"></ul>
+    </div>
+
+    <script>
+        const storedData = JSON.parse(localStorage.getItem('personalData'));
+
+        if (storedData) {
+            document.getElementById('name').textContent = storedData.name;
+            document.getElementById('age').textContent = storedData.age;
+            document.getElementById('gender').textContent = storedData.gender;
+            document.getElementById('description').textContent = storedData.description;
+            document.getElementById('major').textContent = storedData.major;
+
+            const languagesList = document.getElementById('languages');
+            storedData.languages.forEach(language => {
+                const li = document.createElement('li');
+                li.textContent = language;
+                languagesList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+
+</html>

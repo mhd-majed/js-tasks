@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <h2>Login</h2>
+    <form id="login_form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Login">
+    </form>
+
+    <div id="login_error" style="color: red;"></div>
+
+    <script >
+        document.addEventListener("DOMContentLoaded", function () {
+                const loginForm = document.getElementById("login_form");
+                const loginError = document.getElementById("login_error");
+
+                loginForm.addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    const email = loginForm.email.value.trim();
+                    const password = loginForm.password.value;
+                    const storedUserData = JSON.parse(localStorage.getItem('formData'));
+
+                    if (storedUserData) {
+                        if (email === storedUserData.email && password === storedUserData.password) {
+                            loginError.textContent = "";
+
+                            alert(`Welcome back, ${storedUserData.firstName} ${storedUserData.lastName}!`);
+
+                            loginForm.reset();
+                        } else {
+                            loginError.textContent = "Invalid email or password. Please try again.";
+                        }
+                    } else {
+                        loginError.textContent = "No user found. Please register first.";
+                    }
+                });
+            });
+
+    </script>
+</body>
+
+</html>

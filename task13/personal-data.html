@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Data Form</title>
+        <script src="personal-data-script.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-bottom: 20px;
+        }
+
+        .inline {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Personal Data Form</h1>
+    <form action="/submit" method="post" id="personal-data-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label>Gender:</label><br>
+        <div class="radio-group">
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male" class="inline">Male</label>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label for="female" class="inline">Female</label>
+        </div>
+
+        <label for="description">Brief Description:</label>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+
+        <label for="major">Major and University:</label>
+        <input type="text" id="major" name="major" required>
+
+        <label>Preferred Programming Languages (select at least 3):</label><br>
+        <div class="checkbox-group">
+            <input type="checkbox" id="python" name="languages" value="Python">
+            <label for="python" class="inline">Python</label>
+            <input type="checkbox" id="javascript" name="languages" value="JavaScript">
+            <label for="javascript" class="inline">JavaScript</label>
+            <input type="checkbox" id="csharp" name="languages" value="C#">
+            <label for="csharp" class="inline">C#</label>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
